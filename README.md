@@ -1,3 +1,23 @@
-# Design of Computer Systems 2. project - One-time pad algorithm in MIPS64 architecture
+# INP 2. project - One-time Pad Encryption - MIPS64
 
-In the MIPS64 symbolic instruction language and using the EduMIPS64 simulator, write a program implementing a slightly modified, simplified **One-time pad algorithm**. One-time pad algorithm belongs to the category of substitution ciphers, and its principle for the purposes of this project will consist in replacing each letter of the message with another letter that is shifted in the alphabet by the value given by the corresponding letter of the encryption key. Consider a message consisting entirely of lowercase letters a-z and numbers 0-9. The encryption key with a fixed length of two characters will consist of the letters of the English alphabet a-z, which are periodically repeated over the individual characters of the message. Characters will be represented by their ASCII codes for encryption purposes. The encryption will take place in such a way that the message is read character by character from left to right, the first character of the key moves the read character forward, the second character of the key moves the character backwards. **If the digit is read, the encryption is finished** and the ciphertext is output as a result.
+## Author
+
+- **Name:** Maksim Kalutski
+- **Login:** xkalut00 
+
+This repository contains the implementation of a simplified One-time pad encryption algorithm using the MIPS64 architecture and EduMIPS64 simulator. The implementation demonstrates a substitution cipher method for encryption.
+
+## Project Overview
+
+The One-time pad algorithm used here modifies each letter of a plaintext message based on a two-character key. Each letter of the plaintext is shifted forward in the alphabet by the ASCII difference from the first key character and then backwards by the ASCII difference from the second. If a number is encountered in the plaintext, the encryption terminates and outputs the ciphertext.
+
+
+## Code Structure
+
+- **Data Segment:** Initializes storage for the input (user login) and output (encrypted login).
+- **Code Segment:** Contains the encryption logic implemented in MIPS64 assembly language.
+
+## Encryption Details
+
+- **Encryption Key:** Fixed at two characters, shifts each character of the message forward by the ASCII value of the first key character and backward by the second.
+- **Termination Condition:** The presence of a numeric character in the input string stops the encryption process.
